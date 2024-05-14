@@ -1,0 +1,19 @@
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string text = "Цей текст містить слова з буквою е: текст, легкий, печінка, медаль.";
+        string pattern = @"\b\w*е\w*\b"; // Шаблон для слова, яке містить букву "е"
+
+        MatchCollection matches = Regex.Matches(text, pattern);
+
+        Console.WriteLine("Слова, що містять букву 'е':");
+        foreach (Match match in matches)
+        {
+            Console.WriteLine(match.Value);
+        }
+    }
+}
